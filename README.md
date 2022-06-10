@@ -21,11 +21,11 @@
 ## 現場報到
 當與會者到現場時，須出示QRCode或~~報到編號~~，工作人員（招待）透過~~Line或~~QRCode掃瞄器幫助與會者完成報到。
 - QRCode  
-原本是使用Apple手機內建的app [Shortcut](https://apps.apple.com/app/id1462947752) 來對Api送出Post請求，但不清楚是軟體bug還是有其他問題，導致與伺服器連線相當慢，因此決定自己寫一個app來處理掃描QRCode的工作。
+原本是使用Apple手機內建的app [Shortcut](https://apps.apple.com/app/id1462947752) 來對Api送出Post請求，但不清楚是軟體bug還是有其他問題，導致與伺服器連線相當慢，因此決定自己寫一個app來處理掃描QRCode的工作。  
 ![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/app_demo.gif)
 
 - 手動登記  
-點擊綠色勾勾完成點名，點擊紅色叉叉則取消出席紀錄。
+點擊綠色勾勾完成點名，點擊紅色叉叉則取消出席紀錄。  
 ![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/rollcall.png)
 
 
