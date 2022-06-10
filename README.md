@@ -19,29 +19,32 @@
 ***
 
 ## 現場報到
-當與會者到現場時，須出示QRCode或報到編號，工作人員（招待）透過Line或QRCode掃瞄器幫助與會者完成報到。
+當與會者到現場時，須出示QRCode或~~報到編號~~，工作人員（招待）透過~~Line或~~QRCode掃瞄器幫助與會者完成報到。
 - QRCode  
-利用Apple手機內建的app "[Shortcut](https://apps.apple.com/app/id1462947752)"來對Api送出Post請求。
-
-- Line  
-串接Line機器人([Line Bot](https://developers.line.biz/en/docs/messaging-api/overview/))，在特定聊天室中送出報到編號，即完成報到工作。  
-
-- Telegram  
-已成功串接[Telegram Bot](https://core.telegram.org/api)，但尚未設計回應模式。
+原本是使用Apple手機內建的app [Shortcut](https://apps.apple.com/app/id1462947752) 來對Api送出Post請求，但不清楚是軟體bug還是有其他問題，導致與伺服器連線相當慢，因此決定自己寫一個app來處理掃描QRCode的工作。
+![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/app_demo.gif)
 
 - 手動登記  
 點擊綠色勾勾完成點名，點擊紅色叉叉則取消出席紀錄。
 ![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/rollcall.png)
 
-#### *開發中*
-- *串接Line和Telegram進行身份驗證：  
-目前是用程式做出QRCode後，手動傳給每個人，但這樣會遇到有人沒有將QRCode存下來，以至於到現場時沒辦法提供QRCode，如果能串接通訊軟體，就可以讓與會者隨時透過通訊軟體取得自己的QRCode。*
-- *寫一個掃描QRCode的app：  
-目前使用Shortcut來掃描，但常常發生不穩定的狀況。不使用一般的掃描QRCode app是因為，目前沒有找到可以設定GET、POST方法、傳送value等功能之app。*
+
+## QRCode 取得方式
+與會者入場時會使用到的QRCode可透過串接通訊軟體來取得。
+|  |[Line Bot](https://developers.line.biz/en/docs/messaging-api/overview/) | [Telegram Bot](https://core.telegram.org/api) |
+| :---- | :----: | :----: |
+| 串接方式 | ![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/line_connect.gif) | ![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/telegram_connect.gif) |
+| 取得方式 | 點擊圖文選單中的QRCode圖示 | 點擊左下角menu選單中的 "取得QRCode" |
+
 
 ## 人數統計
-彙整資料，並計算出席的人數、準時率、男女比......等資訊。
-![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/data.png)
+彙整資料，並計算出席的人數、準時率、男女比......等資訊。 
+![img](https://github.com/JT-427/tncc-attend-demo/blob/master/ex/data.png)  
+
+***  
+#### *開發中*
+- *將Excel透過ODBC串接資料庫，來處理一些不需要即時取得，但仍然需要的資料。 （目前在討論需求中）*
+- *將Power BI透過ODBC串接資料庫，來將資料圖像化。 （目前在討論需求中）*
 
 ***
 ### 專案開發期間
